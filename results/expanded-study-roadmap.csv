@@ -1,0 +1,10 @@
+study,role,assay,material,priority,rationale
+GLDS-208,direct root validation,microarray + RNA-seq,root apex,1,Closest independent tissue match to the GLDS-7 root discovery; tests tissue transfer across platforms.
+GLDS-120,context and genotype validation,RNA-seq,"multiple ecotypes, genotypes and light treatments",2,"Separates conserved response from ecotype, genotype and illumination effects."
+GLDS-251,gravity dose-response,RNA-seq,seedlings under fractional gravity and blue light,3,Supports a gravity-response curve rather than a binary flight-versus-ground interpretation.
+GLDS-218,regulatory mechanism,RNA-seq,seedling development,4,Adds alternative splicing as a regulatory layer beyond gene abundance.
+GLDS-205,mechanistic perturbation,microarray,undifferentiated cells; HSFA2,5,Tests heat-shock/redox regulation through an explicit transcription-factor perturbation.
+GLDS-147,gravity-sensing mechanism,microarray,undifferentiated cells; ARG1,6,Tests genetic involvement of a gravity-response component.
+GLDS-213,cell-autonomous transfer,microarray,cell cultures flown on Shenzhou 8,7,Tests whether part of the signature is retained without differentiated tissues.
+GLDS-46,radiation control,microarray,seedlings exposed to gamma and HZE radiation,8,Separates radiation-responsive genes from gravity-associated genes.
+GLDS-136,hypobaria control,microarray,Arabidopsis under components of low pressure,9,Separates low-pressure/hypoxia-like transcription from orbital exposure.
