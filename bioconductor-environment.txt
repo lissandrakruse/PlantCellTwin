@@ -1,4 +1,4 @@
-List of packages in environment: "/workspace/scratch/1b7c2e5453f2/r-bioc"
+PlantCellTwin Bioconductor environment package list
 
   Name                           Version       Build                 Channel    
 ──────────────────────────────────────────────────────────────────────────────────

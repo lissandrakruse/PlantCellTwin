@@ -1,0 +1,16 @@
+name: plantcelltwin
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python=3.11
+  - numpy>=1.26
+  - pandas>=2.1
+  - scipy>=1.11
+  - scikit-learn>=1.4
+  - openpyxl>=3.1
+  - pyyaml>=6
+  - r-base=4.4
+  - bioconductor-affy=1.84
+  - bioconductor-limma=3.62
+  - bioconductor-ath1121501cdf=2.18

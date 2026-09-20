@@ -1,0 +1,16 @@
+.hypothesis-badge {
+  display: inline-block;
+  margin-left: 4px;
+  padding: 2px 4px;
+  border: 1px solid #ff9a51;
+  color: #ff9a51;
+  font: 700 7px monospace;
+  letter-spacing: .08em;
+}
+
+.scenario-warning {
+  display: block;
+  margin-top: 7px;
+  color: #ff9a51;
+  font: 700 7px/1.4 monospace;
+}

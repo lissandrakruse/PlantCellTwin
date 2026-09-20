@@ -6,6 +6,7 @@
   <meta name="description" content="Interactive AI-assisted 3D digital twin concept for OSDR environmental telemetry and cellular response.">
   <title>Orbital Cell Twin — OSDR Concept</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="scenario-warnings.css">
   <link rel="stylesheet" href="plant.css">
 </head>
 <body>
@@ -34,8 +35,8 @@
           </label>
           <div class="scenario-title">GLDS-7 CONTRAST</div>
           <div class="scenario-buttons condition-buttons"><button data-condition="ground">1 g ground control</button><button data-condition="flight" class="active">ISS spaceflight</button></div>
-          <label>Exposure interpolation <output id="exposureOut">100%</output><input id="exposure" type="range" min="0" max="1" step="0.01" value="1"></label>
-          <label>Light perturbation <output id="lightOut">0%</output><input id="light" type="range" min="-100" max="100" step="5" value="0"></label>
+          <label>Exposure interpolation <span class="hypothesis-badge">HYPOTHETICAL</span> <output id="exposureOut">100%</output><input id="exposure" type="range" min="0" max="1" step="0.01" value="1"><small class="scenario-warning">Scenario control · not a NASA empirical dose response</small></label>
+          <label>Light perturbation <span class="hypothesis-badge">HYPOTHETICAL</span> <output id="lightOut">0%</output><input id="light" type="range" min="-100" max="100" step="5" value="0"><small class="scenario-warning">Model extrapolation · no GLDS-7 light coefficient</small></label>
           <div class="source-box"><b>OBSERVED DESIGN</b><span>STS-131 · ISS · TAGES</span><span>12-day plants · Affymetrix ATH1</span><span id="replicateLabel">5 flight + 5 ground</span></div>
           <button class="run" id="recordBtn">＋ &nbsp; REGISTRAR LEVANTAMENTO</button>
         </aside>

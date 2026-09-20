@@ -28,6 +28,37 @@ This repository accompanies the manuscript “PlantCellTwin reveals a gravity-re
 - `results/`: frozen derived result tables
 - Publication figures, manuscript files, supplementary information, and complete environment records are included in the versioned Zenodo archival package
 
+## Quick start
+
+Serve the static interface with `python -m http.server 8000`, then open
+`http://localhost:8000`. For analysis, create the environment and obtain the
+public inputs listed in `data/README.md`:
+
+```bash
+conda env create -f environment.yml
+conda activate plantcelltwin
+python analysis/analyze_glds7.py
+```
+
+Workflows read from `data/` and write to `results/`. Set `PCT_DATA_DIR` and
+optionally `PCT_RESULTS_DIR` to use other locations.
+
+## Verify the release
+
+Frozen result tables provide a small open test fixture:
+
+```bash
+./run_verification.sh
+```
+
+The script checks required assets, expected GLDS-7 R/Python concordance,
+OSD-251 panel direction, syntax, and machine-specific paths in the interface.
+
+## Support and contributions
+
+Use the GitHub issue tracker for support and bug reports. Pull requests are
+welcome; see `CONTRIBUTING.md`.
+
 ## Archived release
 
 Version 1.0.0 is permanently archived on Zenodo:
