@@ -1,0 +1,49 @@
+tissue,probe,locus,symbol,title,log2fc,fdr
+whole plant,258303_at,AT3G30620,AT3G30620,pseudo,4.153,0.488496
+whole plant,266378_at,AT2G14700,AT2G14700,hypothetical protein,2.576,0.979115
+whole plant,265992_at,AT2G24130,AT2G24130,putative leucine-rich repeat receptor-like serine/threonine-protein kinase,4.25,0.986682
+whole plant,256136_s_at,AT1G48720,AT1G48720,hypothetical protein,3.83,0.986682
+whole plant,259944_at,AT1G71470,AT1G71470,hypothetical protein,3.774,0.986682
+whole plant,262977_at,AT1G75490,AT1G75490,dehydration-responsive element-binding protein 2D,3.75,0.986682
+whole plant,252380_at,AT3G47740,ATH2,ABC transporter A family member 3,3.412,0.986682
+whole plant,261051_at,AT1G01280,CYP703A2,"cytochrome P450, family 703, subfamily A, polypeptide 2",3.353,0.986682
+whole plant,255113_at,AT4G08820,AT4G08820,pseudo,3.347,0.986682
+whole plant,245548_at,AT4G15310,CYP702A3,"cytochrome P450, family 702, subfamily A, polypeptide 3",3.306,0.986682
+whole plant,245369_at,AT4G15975,AT4G15975,RING-H2 finger protein ATL17,3.273,0.986682
+whole plant,266455_at,AT2G22760,AT2G22760,transcription factor bHLH19,3.264,0.986682
+shoot,261335_at,AT1G44800,AT1G44800,bidirectional amino acid transporter SIAR1,-0.955,0.140076
+shoot,247576_at,AT5G61280,AT5G61280,Remorin family protein,-3.53,0.649459
+shoot,256571_at,AT3G30730,AT3G30730,hypothetical protein,-3.355,0.649459
+shoot,259714_at,AT1G60980,GA20OX4,gibberellin 20-oxidase 4,-3.167,0.649459
+shoot,256289_s_at,AT3G12230,SCPL15///scpl14,serine carboxypeptidase-like 15///serine carboxypeptidase-like 14,-3.121,0.649459
+shoot,264643_at,AT1G08990,PGSIP5,plant glycogenin-like starch initiation protein 5,-3.027,0.649459
+shoot,246353_s_at,AT1G39190,AT1G39190,pseudo,-2.956,0.649459
+shoot,256084_at,AT1G20750,AT1G20750,RAD3-like DNA-binding helicase protein,-2.946,0.649459
+shoot,265600_at,AT2G14230,AT2G14230,pseudo,-2.905,0.649459
+shoot,245586_at,AT4G14980,AT4G14980,Cysteine/Histidine-rich C1 domain family protein,-2.892,0.649459
+shoot,257842_at,AT3G28390,PGP18,ABC transporter B family member 18,-2.877,0.649459
+shoot,251824_at,AT3G55090,AT3G55090,ABC transporter G family member 16,-2.857,0.649459
+hypocotyl,265889_at,AT2G15130,AT2G15130,basic secretory protein family protein,3.041,0.218181
+hypocotyl,248990_at,AT5G45210,AT5G45210,TIR-NBS-LRR class disease resistance protein,-2.488,0.401948
+hypocotyl,253604_at,AT4G30970,AT4G30970,hypothetical protein,-2.455,0.401948
+hypocotyl,255191_at,AT4G07370,AT4G07370,pseudo,2.182,0.401948
+hypocotyl,248350_at,AT5G52160,AT5G52160,bifunctional inhibitor/lipid-transfer protein/seed storage 2S albumin-like protein,1.939,0.401948
+hypocotyl,260727_at,AT1G48100,AT1G48100,polygalacturonase,-1.139,0.401948
+hypocotyl,252917_at,AT4G38960,AT4G38960,B-box type zinc finger-containing protein,-0.798,0.401948
+hypocotyl,266073_at,AT2G18770,AT2G18770,SR-beta domain-containing protein,0.39,0.401948
+hypocotyl,247606_at,AT5G61000,RPA70D,replication protein A 70 kDa DNA-binding subunit D,-0.291,0.494345
+hypocotyl,259060_at,AT3G07400,AT3G07400,lipase class 3 family protein,0.329,0.510113
+hypocotyl,255966_at,AT1G22300,GRF10,14-3-3-like protein GF14 epsilon,-0.341,0.626189
+hypocotyl,245324_at,AT4G17260,AT4G17260,lactate/malate dehydrogenase family protein,-0.423,0.708022
+root,245749_at,AT1G51090,AT1G51090,hypothetical protein,3.103,0.310425
+root,246821_at,AT5G26920,CBP60G,Cam-binding protein 60-like G,1.026,0.310425
+root,263096_at,AT2G16060,HB1,non-symbiotic hemoglobin 1,-0.892,0.310425
+root,258132_at,AT3G24550,PERK1,proline-rich extensin-like receptor kinase 1,0.464,0.310425
+root,250849_at,AT5G04410,NAC2,NAC family transcriptional activator,0.408,0.310425
+root,245629_at,AT1G56580,SVB,protein SMALLER WITH VARIABLE BRANCHES,-0.377,0.310425
+root,264564_at,AT1G05290,AT1G05290,CCT motif-containing protein,3.03,0.359328
+root,260310_at,AT1G70590,AT1G70590,F-box protein,0.41,0.359328
+root,248645_at,AT5G49150,GEX2,protein GAMETE EXPRESSED 2,2.648,0.359832
+root,245755_at,AT1G35210,AT1G35210,hypothetical protein,2.158,0.359832
+root,246656_at,AT5G35240,AT5G35240,pseudo,2.875,0.412299
+root,249042_at,AT5G44350,AT5G44350,ethylene-responsive nuclear protein -like protein,0.991,0.412299
