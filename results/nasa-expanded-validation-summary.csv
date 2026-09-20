@@ -1,0 +1,5 @@
+study,panel,role,n_expected,n_available_rna,n_rna_fdr_lt_0_05,n_array_fdr_lt_0_05,n_cross_platform_same_direction,cross_platform_spearman_rho,cross_platform_spearman_p,n_available,n_uG_vs_1G_fdr_lt_0_05,n_uG_vs_1G_positive,n_same_direction_as_glds7_flight,n_positive_gravity_trends,positive_trend_sign_test_p,median_gravity_spearman_rho,n_gene_trends_nominal_p_lt_0_05,n_gene_trends_panel_fdr_lt_0_05
+GLDS-208,GLDS-7 root defense-regulatory,root-zone biological context,12,11.0,7.0,4.0,5.0,0.09999999999999999,0.8728885715695384,,,,,,,,,
+GLDS-208,NASA cross-study core,root-zone biological context,6,6.0,4.0,1.0,3.0,-0.5,0.6666666666666666,,,,,,,,,
+OSD-251,GLDS-7 root defense-regulatory,in-flight fractional-gravity response,12,,,,,,,12.0,0.0,0.0,0.0,12.0,0.00048828125,0.7714285714285715,5.0,0.0
+OSD-251,NASA cross-study core,in-flight fractional-gravity response,6,,,,,,,6.0,0.0,2.0,2.0,6.0,0.03125,0.6571428571428573,2.0,0.0
