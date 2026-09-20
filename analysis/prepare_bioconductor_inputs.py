@@ -1,10 +1,10 @@
-from pathlib import Path
 import re
 import pandas as pd
 
 from analyze_glds7 import read_matrix, read_annotation, clean
+from config import DATA_DIR
 
-ROOT = Path('/workspace/scratch/1b7c2e5453f2')
+ROOT = DATA_DIR
 
 _, meta = read_matrix()
 meta['plate'] = meta['title'].str.extract(r'plate(\d)', expand=False).astype(int)

@@ -1,16 +1,14 @@
 import json
-from pathlib import Path
-
 import numpy as np
 import pandas as pd
 from scipy import stats
 
 from analyze_glds7 import read_matrix, read_annotation, clean, bh
+from config import DATA_DIR, RESULTS_DIR, require
 
-ROOT = Path('/workspace/scratch/1b7c2e5453f2')
-BOOK = ROOT / 'arabidopsis_MOESM5.xlsx'
-OUT = ROOT / 'orbital-cell-twin' / 'nasa-cross-validation.json'
-CSV = ROOT / 'orbital-cell-twin' / 'nasa-cross-validation.csv'
+BOOK = DATA_DIR / 'arabidopsis_MOESM5.xlsx'
+OUT = RESULTS_DIR / 'nasa-cross-validation.json'
+CSV = RESULTS_DIR / 'nasa-cross-validation.csv'
 
 
 SHEETS = {
@@ -23,6 +21,7 @@ SHEETS = {
 
 
 def external_sets():
+    require(BOOK, 'Barker et al. supplementary workbook')
     out = {}
     for sheet, (id_col, fc_col, p_col) in SHEETS.items():
         df = pd.read_excel(BOOK, sheet_name=sheet, header=1)

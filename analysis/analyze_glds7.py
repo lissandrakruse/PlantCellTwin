@@ -1,17 +1,15 @@
 import gzip
 import json
-from pathlib import Path
-
 import numpy as np
 import pandas as pd
 from scipy import stats
+from config import DATA_DIR, RESULTS_DIR, require
 
 
-ROOT = Path('/workspace/scratch/1b7c2e5453f2')
-MATRIX = ROOT / 'GSE56659_series_matrix.txt.gz'
-ANNOT = ROOT / 'GPL198.annot.gz'
-OUT = ROOT / 'orbital-cell-twin' / 'glds7-results.json'
-CSV = ROOT / 'orbital-cell-twin' / 'glds7-top-genes.csv'
+MATRIX = DATA_DIR / 'GSE56659_series_matrix.txt.gz'
+ANNOT = DATA_DIR / 'GPL198.annot.gz'
+OUT = RESULTS_DIR / 'glds7-results.json'
+CSV = RESULTS_DIR / 'glds7-top-genes.csv'
 
 
 def bh(pvalues):
@@ -25,6 +23,7 @@ def bh(pvalues):
 
 
 def read_matrix():
+    require(MATRIX, 'GEO series matrix')
     titles = None
     accessions = None
     header = None
@@ -56,6 +55,7 @@ def read_matrix():
 
 
 def read_annotation():
+    require(ANNOT, 'GEO platform annotation')
     with gzip.open(ANNOT, 'rt', errors='replace') as fh:
         for line in fh:
             if line.startswith('!platform_table_begin'):

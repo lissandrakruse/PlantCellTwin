@@ -1,14 +1,12 @@
 import json
-from pathlib import Path
-
 import numpy as np
 import pandas as pd
 from scipy import stats
 
 from cross_validate_nasa import external_sets
+from config import RESULTS_DIR
 
-ROOT = Path('/workspace/scratch/1b7c2e5453f2')
-SITE = ROOT / 'orbital-cell-twin'
+SITE = RESULTS_DIR
 
 PANELS = {
     'GLDS-7 root defense-regulatory': {

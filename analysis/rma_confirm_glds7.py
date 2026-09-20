@@ -2,21 +2,22 @@ import json
 import re
 import sys
 from collections import OrderedDict
-from pathlib import Path
-
 import numpy as np
 import pandas as pd
 from scipy import optimize, special, stats
 
-ROOT = Path('/workspace/scratch/1b7c2e5453f2')
-sys.path.insert(0, str(ROOT/'pyaffy-src'))
-import pyaffy
-
 from analyze_glds7 import read_matrix, read_annotation, clean, bh
+from config import DATA_DIR, RESULTS_DIR
 
-RAW = ROOT/'GSE56659_RAW'
-CDF = ROOT/'ATH1-121501.CDF'
-SITE = ROOT/'orbital-cell-twin'
+try:
+    import pyaffy
+except ImportError as exc:
+    raise ImportError('Install pyaffy before running the independent Python RMA workflow.') from exc
+
+ROOT = DATA_DIR
+RAW = DATA_DIR/'GSE56659_RAW'
+CDF = DATA_DIR/'ATH1-121501.CDF'
+SITE = RESULTS_DIR
 
 
 def prior(s2, df):

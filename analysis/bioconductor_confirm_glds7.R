@@ -5,7 +5,12 @@ suppressPackageStartupMessages({
   library(ath1121501cdf)
 })
 
-root <- "/workspace/scratch/1b7c2e5453f2"
+args <- commandArgs(trailingOnly=TRUE)
+script_arg <- grep("--file=", commandArgs(), value=TRUE)
+repo <- normalizePath(file.path(dirname(sub("--file=", "", script_arg[[1]])), ".."), mustWork=TRUE)
+root <- if (length(args) >= 1) normalizePath(args[[1]], mustWork=TRUE) else Sys.getenv("PCT_DATA_DIR", file.path(repo, "data"))
+results <- Sys.getenv("PCT_RESULTS_DIR", file.path(repo, "results"))
+dir.create(results, recursive=TRUE, showWarnings=FALSE)
 site <- file.path(root, "orbital-cell-twin")
 meta <- read.csv(file.path(root, "glds7_sample_metadata.csv"), stringsAsFactors=FALSE)
 map <- read.csv(file.path(root, "glds7_probe_locus_map.csv"), stringsAsFactors=FALSE)
@@ -21,7 +26,7 @@ eset <- rma(raw, verbose=TRUE)
 probe_expr <- exprs(eset)
 colnames(probe_expr) <- sub("_.*", "", basename(sampleNames(eset)))
 probe_expr <- probe_expr[, meta$accession, drop=FALSE]
-write.csv(probe_expr, gzfile(file.path(root, "GSE56659_Bioconductor_RMA_expression.csv.gz")))
+write.csv(probe_expr, gzfile(file.path(results, "GSE56659_Bioconductor_RMA_expression.csv.gz")))
 
 map <- map[match(rownames(probe_expr), map$probe),]
 valid <- !is.na(map$locus) & nzchar(map$locus)

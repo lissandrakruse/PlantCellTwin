@@ -7,15 +7,14 @@ in-flight fractional-gravity series. Results are intentionally panel-level
 and retain the original study contrasts.
 """
 
-from pathlib import Path
 import json
 import math
 import pandas as pd
 from scipy.stats import spearmanr, binomtest
+from config import DATA_DIR, RESULTS_DIR
 
-ROOT = Path(__file__).resolve().parent
-DATA = ROOT / "nasa_expansion_data"
-OUT = ROOT / "orbital-cell-twin"
+DATA = DATA_DIR / "nasa_expansion_data"
+OUT = RESULTS_DIR
 
 panels = pd.read_csv(OUT / "expanded-marker-panels.csv")
 

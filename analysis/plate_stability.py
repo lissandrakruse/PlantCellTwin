@@ -1,14 +1,14 @@
 import json, re
-from pathlib import Path
 import numpy as np
 import pandas as pd
 from scipy import stats
 from analyze_glds7 import read_matrix, read_annotation, clean, bh
+from config import DATA_DIR, RESULTS_DIR, require
 
-ROOT=Path('/workspace/scratch/1b7c2e5453f2'); SITE=ROOT/'orbital-cell-twin'
+ROOT=DATA_DIR; SITE=RESULTS_DIR
 
 def main():
-    expr=pd.read_csv(ROOT/'GSE56659_RMA_expression.csv.gz',index_col=0)
+    expr=pd.read_csv(require(ROOT/'GSE56659_RMA_expression.csv.gz', 'Python RMA expression matrix'),index_col=0)
     _,meta=read_matrix(); ann=read_annotation().set_index('ID')
     loci=ann['Platform_ORF'].reindex(expr.index).map(clean).str.upper();valid=loci.str.match(r'^AT[1-5CM]G\d{5}$',na=False)
     pick=pd.DataFrame({'probe':expr.index[valid],'locus':loci[valid].values,'v':expr.loc[valid].var(axis=1).values}).sort_values('v',ascending=False).drop_duplicates('locus')

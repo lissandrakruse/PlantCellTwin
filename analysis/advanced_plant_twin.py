@@ -1,6 +1,4 @@
 import json
-from pathlib import Path
-
 import numpy as np
 import pandas as pd
 from scipy import optimize, special, stats
@@ -8,10 +6,10 @@ from sklearn.metrics import roc_auc_score
 
 from analyze_glds7 import read_matrix, read_annotation, clean, bh
 from cross_validate_nasa import external_sets
+from config import RESULTS_DIR
 
 
-ROOT = Path('/workspace/scratch/1b7c2e5453f2')
-SITE = ROOT / 'orbital-cell-twin'
+SITE = RESULTS_DIR
 JSON_OUT = SITE / 'advanced-validation.json'
 GENE_OUT = SITE / 'moderated-gene-results.csv'
 GO_OUT = SITE / 'go-enrichment.csv'
