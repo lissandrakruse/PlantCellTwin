@@ -1,0 +1,5 @@
+tissue,shared_loci,effect_spearman,spearman_p,top300_overlap,top300_same_direction
+whole plant,22591,0.521246323765983,0.0,17,1.0
+shoot,22591,0.625885000842594,0.0,62,1.0
+hypocotyl,22591,0.5953793984832284,0.0,77,1.0
+root,22591,0.6007354929111081,0.0,158,1.0
