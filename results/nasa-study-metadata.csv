@@ -1,0 +1,7 @@
+study,samples,Tissue,Age at Harvest (days),Assay Device Type,Hardware,Ecotype,Light,Sample Preservation Method,Developmental
+GLDS-7,36,Seedlings | Shoot | Hypocotyl | Root,12,DNA microarray,ABRS,"WS-0 | 60% WS, 40% Col-0",White light,RNA later,12 day old whole plants | 12 day old seedling shoots | 12 day old seedling hypocotyl | 12 day old seedling roots
+GLDS-17,24,Etiolated seedling | Hypocotyl cell culture,12,DNA microarray,BRIC,Col-0,Dark,RNA later,12 day old seedling | 12 day old cell culture
+GLDS-37,56,Etiolated seedling,12,RNA Sequencing (RNA-Seq),BRIC,Ws-2 | Ler-0 | Cvi-0 | Col-0,Dark,RNA later,12 day old seedling
+GLDS-38,12,Etiolated seedling,3,"mass spectrometry, RNA Sequencing (RNA-Seq)",BRIC | mock BRIC,Col-0,White light,RNAlater for 12 hours then into -80C | Frozen in liquid nitrogen,3 day old seedling
+GLDS-44,12,Etiolated seedling,14,DNA microarray,BRIC,Col-0,Dark,RNAlater,14 day old seedling
+GLDS-121,6,Etiolated seedling,12,DNA microarray,BRIC,Ler-0,Dark,RNALater,12 day old seedling
