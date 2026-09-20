@@ -12,9 +12,9 @@ authors:
     affiliation: "Universidade Estadual de Ponta Grossa"
 repository-code: "https://github.com/lissandrakruse/PlantCellTwin"
 url: "https://orbital-cell-twin-osdr.fuganti.chatgpt.site"
-doi: "10.5281/zenodo.22851568"
+doi: "10.5281/zenodo.22862715"
 license: MIT
-version: 1.0.0
+version: 1.0.1
 date-released: 2026-09-20
 keywords:
   - Arabidopsis thaliana
@@ -26,5 +26,5 @@ keywords:
   - digital twin
 identifiers:
   - type: doi
-    value: "10.5281/zenodo.22851568"
-    description: "Archived PlantCellTwin v1.0.0 release"
+    value: "10.5281/zenodo.22862715"
+    description: "Archived PlantCellTwin v1.0.1 release"
