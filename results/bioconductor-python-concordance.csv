@@ -1,0 +1,5 @@
+"tissue","shared_loci","effect_spearman","top300_overlap","top300_same_direction","bioc_fdr_005","python_fdr_005"
+"whole plant",22591,0.994458423005213,255,1,0,0
+"shoot",22591,0.995937055606378,256,1,47,30
+"hypocotyl",22591,0.9960067556212,257,1,31,18
+"root",22591,0.996202758031224,284,1,351,286
