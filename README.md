@@ -1,6 +1,6 @@
 # PlantCellTwin: NASA OSDR-grounded Arabidopsis digital twin
 
-This archival package accompanies the manuscript “PlantCellTwin reveals a gravity-responsive root defense program in Arabidopsis”. It contains the source code, frozen result tables, publication figures, manuscript files, supplementary information, software environment records, and checksums needed to inspect and reproduce the computational analyses.
+This archival package accompanies the manuscript “PlantCellTwin reveals a gravity-responsive root defense program in Arabidopsis”. It contains the source code, frozen result tables, software environment records, and checksums needed to inspect and reproduce the computational analyses.
 
 ## Authors
 
@@ -18,8 +18,7 @@ This archival package accompanies the manuscript “PlantCellTwin reveals a grav
 - `app.js`, `index.html`, `styles.css`, and `plant.css`: interactive simulator
 - `analysis/`: R and Python analysis workflows
 - `results/`: frozen derived result tables
-- `figures/`: publication figures
-- `docs/`: manuscript, cover letter, and supplementary information
+- publication figures and manuscript files are included in the versioned archival package prepared for Zenodo
 
 ## Interpretation
 
