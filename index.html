@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Interactive AI-assisted 3D digital twin concept for OSDR environmental telemetry and cellular response.">
+  <title>Orbital Cell Twin — OSDR Concept</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="plant.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#simulator" aria-label="Orbital Cell Twin home"><span class="brand-mark">O</span><span>ORBITAL CELL TWIN</span></a>
+    <nav><a href="#research">Research</a><a href="#methods">Methods</a><a href="#evidence">Evidence</a><a href="#about">About</a></nav>
+    <span class="prototype-pill"><i></i> RESEARCH PROTOTYPE</span>
+  </header>
+
+  <main>
+    <section class="hero" id="research">
+      <div class="eyebrow">AI × DIGITAL TWINS × SPACE BIOLOGY</div>
+      <h1>See the environment.<br><em>Predict the cell.</em></h1>
+      <p>An interactive plant-cell digital twin for exploring how temperature, water availability, CO₂, light, microgravity and radiation may shape cellular response in space-biology experiments.</p>
+      <div class="hero-actions"><a class="primary" href="#simulator">Launch simulation ↓</a><a class="text-link" href="#methods">Read the research concept ↗</a></div>
+      <div class="mission-note"><strong>MISSION</strong><span>Turn open OSDR telemetry into an interpretable, testable environment for collaborative AI/ML investigation.</span></div>
+    </section>
+
+    <section class="sim-section" id="simulator">
+      <div class="section-heading"><div><span class="kicker">LIVE LAB / 01</span><h2>Environmental–Cellular Digital Twin</h2></div><div class="sim-status"><i></i><span id="runLabel">SIMULATION ACTIVE</span><small id="clock">T+ 00:00:00</small></div></div>
+      <div class="lab-grid">
+        <aside class="controls panel">
+          <div class="panel-title">NASA EXPERIMENT <button id="resetBtn" title="Reset experiment">RESET</button></div>
+          <label class="select-label">Tissue / material
+            <select id="tissue"><option value="root">Root</option><option value="hypocotyl">Hypocotyl</option><option value="shoot">Shoot / leaves</option><option value="whole plant">Whole plant</option></select>
+          </label>
+          <div class="scenario-title">GLDS-7 CONTRAST</div>
+          <div class="scenario-buttons condition-buttons"><button data-condition="ground">1 g ground control</button><button data-condition="flight" class="active">ISS spaceflight</button></div>
+          <label>Exposure interpolation <output id="exposureOut">100%</output><input id="exposure" type="range" min="0" max="1" step="0.01" value="1"></label>
+          <label>Light perturbation <output id="lightOut">0%</output><input id="light" type="range" min="-100" max="100" step="5" value="0"></label>
+          <div class="source-box"><b>OBSERVED DESIGN</b><span>STS-131 · ISS · TAGES</span><span>12-day plants · Affymetrix ATH1</span><span id="replicateLabel">5 flight + 5 ground</span></div>
+          <button class="run" id="recordBtn">＋ &nbsp; REGISTRAR LEVANTAMENTO</button>
+        </aside>
+
+        <div class="viewport panel">
+          <canvas id="cellCanvas" aria-label="Animated virtual cell digital twin"></canvas>
+          <div class="view-label"><span>ARABIDOPSIS / TISSUE-AWARE TWIN</span><strong id="cellState">FLIGHT RESPONSE</strong></div>
+          <div class="orbit-label l1">MEDIAN |log₂FC| <b id="effectLabel">0.214</b></div>
+          <div class="orbit-label l2">EXPLORATORY SIGNALS <b id="candidateLabel">454</b></div>
+          <div class="legend"><span><i class="observed"></i>NASA-derived</span><span><i class="predicted"></i>Twin projection</span></div>
+        </div>
+
+        <aside class="insights panel">
+          <div class="panel-title">EVIDENCE INTERPRETATION <span class="model">GLDS-7 v1</span></div>
+          <div class="score"><span>Response magnitude index</span><strong id="responseIndex">21</strong><small>/100</small><div class="meter"><i id="responseBar"></i></div></div>
+          <div class="metrics"><div><span>SAMPLES</span><b id="sampleCount">10</b></div><div><span>PROBES</span><b>22,810</b></div><div><span>FDR HITS</span><b id="fdrHits">0</b></div><div><span>p&lt;.05 + |FC|≥1</span><b id="candidateCount">454</b></div></div>
+          <div class="explanation"><span>INTERPRETATION</span><p id="explanation">The root contrast contains tissue-specific effect-size candidates, but none survives the strict FDR and fold-change rule in this independent exploratory reanalysis.</p></div>
+          <div class="alert" id="alertBox"><span>●</span><div><b>EXPLORATORY — NOT CONFIRMATORY</b><small>Candidate signals are hypothesis generators</small></div></div>
+          <p class="disclaimer">Derived from the public GLDS-7/GSE56659 MAS5 matrix. Projection changes are simulations; sample statistics remain fixed.</p>
+        </aside>
+      </div>
+
+      <div class="telemetry panel">
+        <div class="panel-title">TOP PROBE EFFECTS <span><i class="observed"></i> GLDS-7 FLIGHT–GROUND <i class="predicted"></i> TWIN PROJECTION</span></div>
+        <canvas id="chartCanvas" aria-label="Top gene expression effect chart"></canvas>
+        <div class="chart-footer"><span>DOWNREGULATED</span><span>0 log₂FC</span><span>UPREGULATED</span></div>
+      </div>
+      <div class="survey panel">
+        <div class="panel-title">LEVANTAMENTOS DO GÊMEO <span id="surveyStatus">0 registros</span></div>
+        <div class="survey-actions"><button id="exportBtn">EXPORTAR CSV</button><button id="clearBtn">LIMPAR</button></div>
+        <div class="survey-table-wrap"><table><thead><tr><th>#</th><th>Tecido</th><th>Condição</th><th>Exposição</th><th>Luz</th><th>Índice</th><th>Sinal principal</th></tr></thead><tbody id="surveyRows"><tr class="empty-row"><td colspan="7">Registre um cenário para iniciar o levantamento comparativo.</td></tr></tbody></table></div>
+      </div>
+      <div class="cross-validation panel">
+        <div class="panel-title">VALIDAÇÃO EXTERNA NASA <span>GLDS-17 · 37 · 38 · 44 · 121</span></div>
+        <div class="validation-summary"><div><strong id="replicatedCount">—</strong><span>comparações replicadas</span></div><div><strong id="partialCount">—</strong><span>evidência parcial</span></div><div><strong>20</strong><span>contrastes testados</span></div></div>
+        <p class="validation-method">Genes candidatos em p ≤ 0,01 foram comparados entre estudos. “Replicado” exige sobreposição e concordância direcional significativas após correção BH nas 20 comparações.</p>
+        <div class="survey-table-wrap"><table><thead><tr><th>Tecido GLDS-7</th><th>Estudo externo</th><th>Genes comuns</th><th>Mesma direção</th><th>FDR sobreposição</th><th>FDR direção</th><th>Conclusão</th></tr></thead><tbody id="validationRows"><tr class="empty-row"><td colspan="7">Carregando validação cruzada…</td></tr></tbody></table></div>
+        <a class="download-data" href="nasa-cross-validation.csv" download>BAIXAR MATRIZ DE VALIDAÇÃO CSV ↓</a>
+      </div>
+      <div class="advanced-validation panel">
+        <div class="panel-title">CAMADA CIENTÍFICA V2 <span>VARIÂNCIA MODERADA · GO · TRANSFERÊNCIA</span></div>
+        <div class="advanced-summary">
+          <div><strong id="goCount">—</strong><span>processos GO com FDR &lt; 0,05</span></div>
+          <div><strong id="predictiveCount">—</strong><span>transferência preditiva</span></div>
+          <div><strong id="rankCount">—</strong><span>contrastes consistentes em ranking</span></div>
+          <div><strong>22.591</strong><span>loci avaliados por tecido</span></div>
+        </div>
+        <p class="validation-method">Modelo linear por tecido com moderação empírico-bayesiana da variância. O enriquecimento usa processos biológicos GO; a transferência testa se o efeito GLDS-7 prevê a direção observada em outros estudos NASA.</p>
+        <div class="advanced-grid">
+          <div><h3>Processos biológicos mais fortes</h3><div id="goRows" class="finding-list">Carregando…</div></div>
+          <div><h3>Teste fora do experimento</h3><div id="transferRows" class="finding-list">Carregando…</div></div>
+        </div>
+        <div class="download-group"><a class="download-data" href="moderated-gene-results.csv" download>RESULTADOS POR GENE ↓</a><a class="download-data" href="go-enrichment.csv" download>ENRIQUECIMENTO GO ↓</a><a class="download-data" href="transfer-validation.csv" download>VALIDAÇÃO DE TRANSFERÊNCIA ↓</a></div>
+      </div>
+      <div class="defense-validation panel">
+        <div class="panel-title">TESTE DA DESCOBERTA <span>ASSINATURA RADICULAR DE DEFESA</span></div>
+        <div class="defense-head"><strong id="defensePairCount">—</strong><div><b>pares via–estudo replicados</b><p>Uma via é considerada repetida quando apresenta FDR &lt; 0,05 e pelo menos dois genes coincidentes em outro conjunto NASA.</p></div></div>
+        <div id="defenseStudies" class="study-evidence">Carregando fundamento nos arquivos NASA…</div>
+        <p class="validation-method metadata-note">GLDS‑7 usa plantas iluminadas, hardware ABRS e tecidos separados. Os conjuntos de confirmação usam principalmente plântulas etioladas em BRIC. A repetição apesar dessas diferenças favorece um sinal compartilhado; as diferenças impedem atribuí-lo exclusivamente à microgravidade.</p>
+        <div class="download-group"><a class="download-data" href="defense-pathway-replication.csv" download>REPLICAÇÃO DAS VIAS ↓</a><a class="download-data" href="nasa-study-metadata.csv" download>METADADOS COMPARATIVOS ↓</a></div>
+      </div>
+      <div class="raw-confirmation panel">
+        <div class="panel-title">CONFIRMAÇÃO NOS ARQUIVOS BRUTOS <span>36 CEL · RMA · BLOQUEIO POR PLACA</span></div>
+        <div class="raw-metrics"><div><strong id="rawRootHits">—</strong><span>loci da raiz com FDR &lt; 0,05</span></div><div><strong id="rawPathways">—</strong><span>vias confirmadas pelo RMA</span></div><div><strong id="stablePathways">—</strong><span>vias positivas nas três placas</span></div><div><strong id="rootPipelineRho">—</strong><span>correlação RMA × MAS5 na raiz</span></div></div>
+        <div class="raw-conclusion"><b>RESULTADO CONFIRMATÓRIO</b><p>O sinal de defesa radicular sobreviveu à troca completa do pré-processamento, ao controle das placas 2, 4 e 6 e à correção de múltiplos testes. Isso reduz a possibilidade de a descoberta ser um artefato exclusivo da matriz MAS5.</p></div>
+        <div id="stableTermRows" class="stable-terms"></div>
+        <div class="download-group"><a class="download-data" href="rma-moderated-results.csv" download>RESULTADOS RMA POR GENE ↓</a><a class="download-data" href="rma-defense-confirmation.csv" download>VIAS CONFIRMADAS ↓</a><a class="download-data" href="pipeline-sensitivity.csv" download>SENSIBILIDADE DO PIPELINE ↓</a><a class="download-data" href="plate-stability.csv" download>ESTABILIDADE POR PLACA ↓</a></div>
+      </div>
+      <div class="raw-confirmation panel">
+        <div class="panel-title">REPRODUÇÃO INDEPENDENTE <span>R 4.4.3 · BIOCONDUCTOR · AFFY + LIMMA</span></div>
+        <div class="raw-metrics"><div><strong id="biocRootHits">—</strong><span>loci da raiz com FDR &lt; 0,05</span></div><div><strong id="biocRootRho">—</strong><span>correlação de efeitos R × Python</span></div><div><strong id="biocTopOverlap">—</strong><span>sobreposição no top 300 da raiz</span></div><div><strong id="biocDirection">—</strong><span>mesma direção na sobreposição</span></div></div>
+        <div class="raw-conclusion"><b>REPRODUTIBILIDADE COMPUTACIONAL FORTE</b><p>Os 36 CEL foram relidos com <code>affy::rma</code> e testados com <code>limma::eBayes</code>, mantendo tecido e placa no modelo. Esta concordância confirma a estabilidade do cálculo; a validação biológica ainda exige um experimento prospectivo.</p></div>
+        <div class="download-group"><a class="download-data" href="bioconductor-limma-results.csv" download>RESULTADOS LIMMA ↓</a><a class="download-data" href="bioconductor-python-concordance.csv" download>CONCORDÂNCIA R × PYTHON ↓</a><a class="download-data" href="bioconductor-summary.json" download>REGISTRO DO AMBIENTE ↓</a></div>
+      </div>
+      <div class="expanded-evidence panel">
+        <div class="panel-title">EXPANSÃO FUNDAMENTADA <span>15 ESTUDOS · DOIS PAINÉIS · TRÊS NÍVEIS DE EVIDÊNCIA</span></div>
+        <div class="evidence-panels">
+          <article><span>PAINEL DESCOBERTO NO GLDS-7</span><strong>12 genes radiculares</strong><p>Defesa, jasmonato, etileno, MAPK, WRKY, redox e ubiquitinação. Todos os 12 passam FDR &lt; 0,01 no limma radicular.</p></article>
+          <article><span>PAINEL CENTRAL DA META-ANÁLISE NASA</span><strong>6 marcadores transversais</strong><p>HSP101, ABS4, COR78, PRX39, AAP2 e MAGL4. Comparador entre estudos, não substituto da assinatura radicular.</p></article>
+        </div>
+        <div class="expanded-conclusion"><b>ACHADO DE SÍNTESE</b><p>O painel central da NASA não reproduz integralmente a direção do painel radicular do GLDS-7. A evidência favorece uma resposta de defesa específica do tecido sobreposta — mas não equivalente — ao eixo geral ROS–plastídio–parede celular. Essa divergência sustenta a necessidade de um gêmeo tecido-específico.</p></div>
+        <div class="evidence-panels">
+          <article><span>GLDS-208 · RESULTADO EXECUTADO</span><strong>7 de 11 genes com FDR &lt; 0,05</strong><p>O painel varia entre as zonas de 0,5 mm e 1,5 mm do ápice radicular. É evidência de contexto de desenvolvimento, não replicação de voo espacial.</p></article>
+          <article><span>OSD-251 · RESULTADO EXECUTADO</span><strong>12 de 12 tendências positivas com a gravidade</strong><p>Mediana de Spearman ρ = 0,771; cinco tendências nominais, nenhuma após FDR. O contraste µg × 1 g ficou oposto ao GLDS-7 e confirma dependência de contexto.</p></article>
+        </div>
+        <h3 class="roadmap-title">Próximos conjuntos priorizados</h3><div id="expansionRoadmap" class="roadmap-grid">Carregando fundamentação…</div>
+        <p class="validation-method">GLDS-208 e OSD-251 agora possuem resultados numéricos baseados nas tabelas processadas oficiais do GeneLab. GLDS-120, GLDS-218, GLDS-205, GLDS-147, GLDS-213, GLDS-46 e GLDS-136 permanecem como roteiro congelado; não são apresentados como evidência concluída.</p>
+        <div class="download-group"><a class="download-data" href="nasa-expanded-validation-summary.csv" download>RESUMO GLDS-208 + OSD-251 ↓</a><a class="download-data" href="glds208-root-zone-validation.csv" download>GLDS-208 POR GENE ↓</a><a class="download-data" href="osd251-gravity-dose-validation.csv" download>OSD-251 POR GENE ↓</a><a class="download-data" href="expanded-marker-panels.csv" download>PAINÉIS DE GENES ↓</a><a class="download-data" href="expanded-study-roadmap.csv" download>ROTEIRO RESTANTE ↓</a><a class="download-data" href="PlantCellTwin_Expanded_Research_Manuscript.docx" download>ARTIGO ATUALIZADO ↓</a></div>
+      </div>
+    </section>
+
+    <section class="methods" id="methods">
+      <div class="section-heading"><div><span class="kicker">RESEARCH LOGIC / 02</span><h2>From telemetry to a testable hypothesis</h2></div></div>
+      <div class="flow"><article><span>01</span><h3>Environmental telemetry</h3><p>Temperature, RH, CO₂ and radiation streams from selected OSDR experiments.</p></article><article><span>02</span><h3>Time-series AI</h3><p>Preprocessing, forecasting, anomaly detection and uncertainty estimation.</p></article><article><span>03</span><h3>Virtual cell response</h3><p>An interpretable visual layer maps model outputs to explicit cellular-state hypotheses.</p></article><article><span>04</span><h3>Biological validation</h3><p>Future comparison with omics and phenotype data to test—not assume—associations.</p></article></div>
+      <blockquote>“Can an AI-assisted 3D Digital Twin reproduce, detect and explain anomalous environmental telemetry patterns—and support testable hypotheses about cellular response—in space-biology experiments?”</blockquote>
+    </section>
+
+    <section class="evidence" id="evidence">
+      <div class="section-heading"><div><span class="kicker">SCIENTIFIC BASIS / 03</span><h2>Evidence behind the model</h2></div><p class="evidence-intro">The demonstrator connects established space-biology findings with an explicitly conceptual response model. Each source below identifies what can be grounded now and what still requires validation with selected OSDR datasets.</p></div>
+      <div class="evidence-map panel"><div><span>ENVIRONMENT</span><strong>Microgravity · radiation · habitat conditions</strong><small>Observed exposure and mission metadata</small></div><b>→</b><div><span>CELLULAR PATHWAYS</span><strong>Mitochondrial stress · oxidative response · DNA regulation</strong><small>Multi-omics evidence and testable mechanisms</small></div><b>→</b><div><span>DIGITAL TWIN</span><strong>State trajectory · anomaly · uncertainty</strong><small>Model prediction, never a clinical conclusion</small></div></div>
+      <div class="plant-focus panel"><div><span>PLANT-CELL TRACK</span><h3>Model organism: <em>Arabidopsis thaliana</em></h3><p>The plant twin links spaceflight conditions to chloroplast redox stress, cell-wall remodeling, root-cell response, photosynthetic state and tissue-specific gene-expression hypotheses.</p></div><div class="plant-signals"><span>CHLOROPLAST / ROS</span><span>CELL WALL</span><span>ROOT GROWTH</span><span>LIGHT RESPONSE</span><span>ION TRANSPORT</span><span>HSP101 / COR78</span></div></div>
+      <div class="paper-grid">
+        <article class="paper-card featured"><div class="paper-meta"><span>FRAMEWORK · CELL · 2026</span><b>NEW</b></div><h3>Fifteen challenges for generative AI applications to cell biology</h3><p>Frames the requirements for generative models that move beyond molecular prediction toward cellular and multicellular behavior, including biological priors, perturbation response, validation and interpretability.</p><div class="supports"><span>SUPPORTS</span> Generative cell-state trajectories, explainability and validation design.</div><a href="https://doi.org/10.1016/j.cell.2026.07.004" target="_blank" rel="noopener">Read article ↗</a></article>
+        <article class="paper-card"><div class="paper-meta"><span>DATA INFRASTRUCTURE · BIOINFORMATICS · 2019</span></div><h3>GeneLab: Omics database for spaceflight experiments</h3><p>Describes NASA GeneLab as an open platform for spaceflight omics, curated datasets and experiment metadata—the data foundation for replacing synthetic inputs with traceable biological evidence.</p><div class="supports"><span>SUPPORTS</span> Dataset provenance, omics integration and reproducible pipelines.</div><a href="https://doi.org/10.1093/bioinformatics/bty884" target="_blank" rel="noopener">Read article ↗</a></article>
+        <article class="paper-card"><div class="paper-meta"><span>HUMAN SPACEFLIGHT · SCIENCE · 2019</span></div><h3>The NASA Twins Study: A multidimensional analysis of a year-long human spaceflight</h3><p>Integrates physiological and multi-omics measurements across a long-duration mission, demonstrating time-dependent biological change, individual variability and post-flight recovery.</p><div class="supports"><span>SUPPORTS</span> Longitudinal trajectories, baseline comparison and recovery states.</div><a href="https://doi.org/10.1126/science.aau8650" target="_blank" rel="noopener">Read article ↗</a></article>
+        <article class="paper-card"><div class="paper-meta"><span>MECHANISM · CELL · 2020</span></div><h3>Comprehensive multi-omics analysis reveals mitochondrial stress as a central biological hub for spaceflight impact</h3><p>Identifies mitochondrial dysregulation and associated immune, metabolic and oxidative-stress signals across astronaut and model-organism datasets.</p><div class="supports"><span>SUPPORTS</span> Oxidative-stress state, mitochondrial response and pathway-level alerts.</div><a href="https://doi.org/10.1016/j.cell.2020.11.002" target="_blank" rel="noopener">Read article ↗</a></article>
+        <article class="paper-card"><div class="paper-meta"><span>OPEN ATLAS · NATURE PORTFOLIO · 2024</span></div><h3>Space Omics and Medical Atlas (SOMA) across orbits</h3><p>Brings together molecular, cellular, physiological and phenotypic spaceflight resources, supporting cross-mission comparisons and more complete biological context.</p><div class="supports"><span>SUPPORTS</span> Multi-scale validation, cross-study comparison and future model expansion.</div><a href="https://www.nature.com/immersive/d42859-024-00009-8/index.html" target="_blank" rel="noopener">Explore SOMA ↗</a></article>
+        <article class="paper-card source-card"><div class="paper-meta"><span>PRIMARY DATA · NASA OSDR</span></div><h3>NASA Open Science Data Repository</h3><p>Provides standardized GeneLab multi-omics data and mission context for experiments affected by microgravity, radiation and other space-environment factors.</p><div class="supports"><span>NEXT STEP</span> Select one cell type, one experiment and matched control before calibrating the model.</div><a href="https://science.nasa.gov/biological-physical/data/osdr/" target="_blank" rel="noopener">Open OSDR ↗</a></article>
+        <article class="paper-card plant-paper"><div class="paper-meta"><span>PLANT META-ANALYSIS · NPJ MICROGRAVITY · 2023</span><b>PLANT</b></div><h3>Meta-analysis of the spaceflight and microgravity response of the Arabidopsis plant transcriptome</h3><p>Reanalyzes 15 NASA GeneLab experiments through common pipelines, reinforcing cell-wall and oxidative-stress responses while identifying light, hardware and assay method as important confounders.</p><div class="supports"><span>SUPPORTS</span> Plant markers, metadata controls and robust cross-experiment comparison.</div><a href="https://doi.org/10.1038/s41526-023-00247-6" target="_blank" rel="noopener">Read article ↗</a></article>
+        <article class="paper-card plant-paper"><div class="paper-meta"><span>PLANT TRANSCRIPTOME · AJB · 2019</span><b>PLANT</b></div><h3>Arabidopsis ecotypes reveal oxidative-stress signatures in spaceflight</h3><p>Shows that genetic backgrounds differ in transcriptional response while retaining signatures associated with oxidative stress.</p><div class="supports"><span>SUPPORTS</span> Chloroplast ROS, genotype selection and uncertainty between ecotypes.</div><a href="https://pubmed.ncbi.nlm.nih.gov/?term=Variation+in+the+transcriptome+of+different+ecotypes+of+Arabidopsis+thaliana+spaceflight" target="_blank" rel="noopener">Find article ↗</a></article>
+        <article class="paper-card plant-paper"><div class="paper-meta"><span>NASA GENELAB · GLDS-7</span><b>DATA</b></div><h3>Arabidopsis spaceflight transcriptome by tissue</h3><p>Compares roots, hypocotyls and leaves from replicated ISS experiments, revealing tissue-specific responses that whole-plant averages can hide.</p><div class="supports"><span>SUPPORTS</span> Root-cell mode, tissue selector and matched spaceflight-versus-ground controls.</div><a href="https://genelab-data.ndc.nasa.gov/genelab/accession/GLDS-7" target="_blank" rel="noopener">Open GLDS-7 ↗</a></article>
+      </div>
+      <div class="validation-note"><strong>MODEL BOUNDARY</strong><p>Sample counts, effect sizes, moderated tests, GO enrichment and cross-study transfer come from reanalysis of public NASA/GEO data. Raw CEL normalization has now been reproduced independently in R/Bioconductor and Python. The exposure and light controls remain model projections—not new NASA measurements. Biological confirmation still requires preregistration and a prospective experiment.</p></div>
+    </section>
+    <section class="about" id="about"><div><span class="kicker">PROJECT NOTE / 04</span><h2>Designed for collaboration, not overclaiming.</h2></div><div><p>This demonstrator separates NASA-derived measurements from model projections. Its empirical layers now combine tissue-aware differential expression, GO processes and cross-dataset transfer across five additional GeneLab studies. Recorded twin scenarios can be exported as a reproducible hypothesis ledger.</p><div class="badges"><span>NASA GLDS-7</span><span>36 SAMPLES</span><span>22,591 LOCI</span><span>EXTERNAL VALIDATION</span></div></div></section>
+  </main>
+  <footer><span>CONCEPT BY LISSANDRA KRUSE FUGANTI</span><span>MASTER'S RESEARCHER · APPLIED COMPUTING · BRAZIL</span><span>DATA: NASA GLDS-7 / GEO GSE56659</span></footer>
+  <script src="app.js"></script>
+</body>
+</html>
