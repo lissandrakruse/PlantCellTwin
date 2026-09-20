@@ -4,6 +4,12 @@
 
 This repository accompanies the manuscript “PlantCellTwin reveals a gravity-responsive root defense program in Arabidopsis”. It contains the source code, frozen result tables, software environment records, and checksums needed to inspect and reproduce the computational analyses.
 
+## Project links
+
+- Source code: https://github.com/lissandrakruse/PlantCellTwin
+- Archived release and DOI: https://doi.org/10.5281/zenodo.22851568
+- Interactive simulator: https://orbital-cell-twin-osdr.fuganti.chatgpt.site
+
 ## Authors
 
 - Lissandra Kruse Fuganti (ORCID [0009-0008-8189-112X](https://orcid.org/0009-0008-8189-112X)), Universidade Estadual de Ponta Grossa
@@ -22,15 +28,12 @@ This repository accompanies the manuscript “PlantCellTwin reveals a gravity-re
 - `results/`: frozen derived result tables
 - Publication figures, manuscript files, supplementary information, and complete environment records are included in the versioned Zenodo archival package
 
-## Interactive simulator
-
-https://orbital-cell-twin-osdr.fuganti.chatgpt.site
-
 ## Archived release
 
 Version 1.0.0 is permanently archived on Zenodo:
 
 - DOI: [10.5281/zenodo.22851568](https://doi.org/10.5281/zenodo.22851568)
+- GitHub: [lissandrakruse/PlantCellTwin](https://github.com/lissandrakruse/PlantCellTwin)
 - Resource type: Software
 - Source-code license: MIT
 - Manuscript and figure license: CC BY 4.0
@@ -43,13 +46,14 @@ BibTeX:
 
 ```bibtex
 @software{fuganti_canteri_2026_plantcelltwin,
-  author    = {Fuganti, Lissandra Kruse and Canteri, Marcelo Giovanetti},
-  title     = {PlantCellTwin: NASA OSDR-grounded Arabidopsis digital twin},
-  year      = {2026},
-  version   = {1.0.0},
-  publisher = {Zenodo},
-  doi       = {10.5281/zenodo.22851568},
-  url       = {https://doi.org/10.5281/zenodo.22851568}
+  author     = {Fuganti, Lissandra Kruse and Canteri, Marcelo Giovanetti},
+  title      = {PlantCellTwin: NASA OSDR-grounded Arabidopsis digital twin},
+  year       = {2026},
+  version    = {1.0.0},
+  publisher  = {Zenodo},
+  doi        = {10.5281/zenodo.22851568},
+  url        = {https://doi.org/10.5281/zenodo.22851568},
+  repository = {https://github.com/lissandrakruse/PlantCellTwin}
 }
 ```
 
